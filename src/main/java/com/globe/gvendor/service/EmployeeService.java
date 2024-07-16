@@ -48,7 +48,7 @@ public class EmployeeService implements IEmployeeService {
     @Override
     public Employee getEmployeeById(Long id) {
         return employeeRepository.findById(id)
-                .orElseThrow(() -> new EmployeeNotFoundException("Sorry, no employee found with the Id" + id));
+                .orElseThrow(() -> new EmployeeNotFoundException("Sorry, no employee found with the Id " + id));
     }
 
     //Deleting user by id
@@ -57,6 +57,7 @@ public class EmployeeService implements IEmployeeService {
         if (!employeeRepository.existsById(id)){
             throw new EmployeeNotFoundException("Sorry, student not found.");
         }
+        employeeRepository.deleteById(id);
     }
     //Getting user by email
     private boolean employeeAlreadyExists(String email) {
