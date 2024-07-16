@@ -32,7 +32,7 @@ public class EmployeeService implements IEmployeeService {
         return employeeRepository.save(employee);
     }
 
-    //Updating user by Id
+    //Updating user by id
     @Override
     public Employee updateEmployee(Employee employee, Long id) {
         return employeeRepository.findById(id).map(st -> {
