@@ -9,7 +9,7 @@ const EmployeesView = () => {
 
   useEffect(() => {
     loadEmployees();
-  }, [])
+  }, []);
   
   const loadEmployees = async () => {
     const result = await axios.get("http://localhost:9192/employees", {
@@ -22,6 +22,11 @@ const EmployeesView = () => {
     if(result.status === 302){
       setEmployees(result.data); //or response?
     }
+  }
+
+  const handleDelete = async (id) => {
+    await axios.delete(`http://localhost:9192/employees/delete/${id}`);
+    loadEmployees();
   }
   
   return (
@@ -62,7 +67,8 @@ const EmployeesView = () => {
                   </Link>
                 </td>
                 <td className="border py-2 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center">
-                  <button className=" bg-blue-500 hover:bg-blue-900 text-center text-white text-sm font-bold py-2 px-4 rounded">
+                  <button className=" bg-blue-500 hover:bg-blue-900 text-center text-white text-sm font-bold py-2 px-4 rounded"
+                    onClick = {() => handleDelete(employee.id)}>
                     Delete
                   </button>
                 </td>
