@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <div className = "bg-blue-950 min-h-screen">
+      <div className = "bg-blue-900 min-h-screen">
         <h2>Welcome to GVendor!</h2>
         <Home/> 
         <EmployeesView/>
