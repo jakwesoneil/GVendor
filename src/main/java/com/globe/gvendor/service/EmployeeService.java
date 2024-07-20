@@ -15,7 +15,7 @@ public class EmployeeService implements IEmployeeService {
 
     private final EmployeeRepository employeeRepository;
 
-    //Getting every student in database
+    //Getting every employee in database
     @Override
     public List<Employee> getEmployees() {
         return employeeRepository.findAll();
@@ -41,7 +41,7 @@ public class EmployeeService implements IEmployeeService {
             st.setEmail(employee.getEmail());
             st.setDepartment(employee.getDepartment());
             return employeeRepository.save(st);
-        }).orElseThrow(() -> new EmployeeNotFoundException("Sorry, this student could not be found."));//you need this coz its like if else statement
+        }).orElseThrow(() -> new EmployeeNotFoundException("Sorry, employee could not be found."));//you need this coz its like if else statement
     }
 
     //Getting user by id
@@ -55,7 +55,7 @@ public class EmployeeService implements IEmployeeService {
     @Override
     public void deleteEmployee(Long id) {
         if (!employeeRepository.existsById(id)){
-            throw new EmployeeNotFoundException("Sorry, student not found.");
+            throw new EmployeeNotFoundException("Sorry, employee not found.");
         }
         employeeRepository.deleteById(id);
     }

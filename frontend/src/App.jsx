@@ -4,6 +4,7 @@ import Home from './Home'
 import EmployeesView from './component/employee/EmployeesView'
 import NavBar from './component/common/NavBar'
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import AddEmployee from './component/employee/AddEmployee'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />}> </Route>
             <Route exact path="/view-employees" element={<EmployeesView />}> </Route>
+            <Route exact path="/add-employees" element={<AddEmployee />}> </Route>
           </Routes>
         </Router>
       </div>
