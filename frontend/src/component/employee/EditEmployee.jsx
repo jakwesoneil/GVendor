@@ -1,21 +1,34 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
-const AddEmployee = () => {
+
+const EditEmployee = () => {
 
     let navigate = useNavigate();
 
-    const [employee, setEmployee] = useState({firstName: "", lastName: "",email: "", department: ""});
-    const{firstName, lastName, email, department} = employee;
+    const {id} = useParams();
+
+    const [employee, setEmployee] = useState({firstName: "", lastName: "", email: "", department: "",});
+    
+    const { firstName, lastName, email, department } = employee;
+
+    useEffect(() => {
+        loadEmployee();
+    }, []);
+      
+      const loadEmployee = async () => {
+        const result = await axios.get(`http://localhost:9192/employees/employee/${id}`);
+        setEmployee(result.data); //or response?
+      }
 
     const handleInputChange = (e) => {
         setEmployee({...employee, [e.target.name]: e.target.value});
     };
 
-    const saveEmployee = async (e) => {
+    const updateEmployee = async (e) => {
         e.preventDefault();
-        await axios.post("http://localhost:9192/employees", employee);
+        await axios.put(`http://localhost:9192/employees/update/${id}`, employee);
         navigate("/view-employees");
     };
 
@@ -23,8 +36,8 @@ const AddEmployee = () => {
   return (
     <div className= "bg-blue-900 py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md mx-auto">
-        <h2 className="mt-5 text-center text-white mb-5">Add Employee</h2>
-            <form className= "space-y-6" onSubmit = {(e)=> saveEmployee(e)}>
+            <form className= "space-y-6" onSubmit = {(e)=> updateEmployee(e)}>
+            <h2 className="mt-5 text-center text-white mb-5">Edit Employee</h2>
                 <div className="mb-5">
                     <label className="block text-sm font-medium text-white" htmlFor='firstName'>First Name</label>
                 </div>
@@ -73,4 +86,4 @@ const AddEmployee = () => {
   )
 }
 
-export default AddEmployee
+export default EditEmployee

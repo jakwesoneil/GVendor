@@ -2,10 +2,12 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import '../../styles.css';
 import { Link } from 'react-router-dom';
+import Search from '../common/Search';
 
 
 const EmployeesView = () => {
   const [employees, setEmployees] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     loadEmployees();
@@ -31,6 +33,8 @@ const EmployeesView = () => {
   
   return (
     <section className="max-w-screen-xl px-4 py-3 mx-auto mt-5">
+      <Search search = {search} setSearch={setSearch}/>
+      
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white shadow-md rounded my-0">
           <thead>
@@ -45,7 +49,9 @@ const EmployeesView = () => {
           </thead>
 
           <tbody>
-            {employees.map((employee, index) => (
+            {employees.filter((st) => st.firstName.toLowerCase().includes(search))
+
+            .map((employee, index) => (
               <tr className ="border py-2 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center text-blue-900 text-sm" key={employee.id}>
                 <th scope="row" key ={index}>
                   {index + 1}
@@ -57,7 +63,7 @@ const EmployeesView = () => {
                 <td className="border py-2 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center text-blue-900 text-sm">{employee.department}</td>
                 <td className="border py-2 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center text-blue-900 text-sm">
                   <Link to = {`/employee-profile/${employee.id}`} className="bg-blue-500 hover:bg-blue-900 text-center text-white text-sm font-bold py-2 px-4 rounded">
-                    View
+                    View 
                   </Link>
                 </td>
                 <td className="border py-2 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center">
