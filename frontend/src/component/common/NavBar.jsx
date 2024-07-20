@@ -7,7 +7,7 @@ const NavBar = () => {
         <nav className="bg-white">
             <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-4">
                 <Link  className="flex items-center space-x-3 rtl:space-x-reverse" to="https://globe.com.ph">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Globe_Telecom_logo.svg/1200px-Globe_Telecom_logo.svg.png" className="h-8" alt="Flowbite Logo" />
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Globe_Telecom_logo.svg/1200px-Globe_Telecom_logo.svg.png" className="h-8" alt="Globe Logo" />
                     <span className="self-center text-2xl  font-semibold whitespace-nowrap text-blue-900">GVendor</span>
                 </Link>
                 <div className="flex items-center space-x-6 rtl:space-x-reverse">
