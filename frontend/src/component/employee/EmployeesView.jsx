@@ -24,17 +24,17 @@ const EmployeesView = () => {
   }
   
   return (
-    <section>
-        <table>
+    <section className="py-4">
+        <table className="min-w-full bg-white shadow-md rounded my-6">
           <thead>
-            <tr>
-              <th>Id</th>
-              <th>FirstName</th>
-              <th>LastName</th>
-              <th>Email</th>
-              <th>Department</th>
-              <th>Actions</th>
-              <th>Actions</th>
+            <tr className="bg-gray-200">
+              <th className="text-left py-2 px-3">Id</th>
+              <th className="text-left py-2 px-3">FirstName</th>
+              <th className="text-left py-2 px-3">LastName</th>
+              <th className="text-left py-2 px-3">Email</th>
+              <th className="text-left py-2 px-3">Department</th>
+              <th className="text-left py-2 px-3">Actions</th>
+              <th className="text-left py-2 px-3">Actions</th>
             </tr>
           </thead>
 
@@ -45,13 +45,13 @@ const EmployeesView = () => {
                   {index + 1}
                 </th>
 
-                <td>{employee.firstName}</td>
-                <td>{employee.lastName}</td>
-                <td>{employee.email}</td>
-                <td>{employee.department}</td>
-                <td>View</td>
-                <td>Update</td>
-                <td>Delete</td>
+                <td className="border py-2 px-3">{employee.firstName}</td>
+                <td className="border py-2 px-3">{employee.lastName}</td>
+                <td className="border py-2 px-3">{employee.email}</td>
+                <td className="border py-2 px-3">{employee.department}</td>
+                <td className="border py-2 px-3">View</td>
+                <td className="border py-2 px-3">Update</td>
+                <td className="border py-2 px-3">Delete</td>
                 {/*</tbody><td><button>Delete</button></td>*/}
               </tr>
             ))}

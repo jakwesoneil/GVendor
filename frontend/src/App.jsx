@@ -8,9 +8,11 @@ function App() {
 
   return (
     <>
-      <h2>Welcome to GVendor!</h2>
-      <Home/> 
-      <EmployeesView/>
+      <div className = "bg-blue-950 min-h-screen">
+        <h2>Welcome to GVendor!</h2>
+        <Home/> 
+        <EmployeesView/>
+      </div>
     </>
   )
 }
