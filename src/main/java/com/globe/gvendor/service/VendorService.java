@@ -17,7 +17,7 @@ public class VendorService implements IVendorService {
 
     //Getting every Vendor in database
     @Override
-    public List<Vendor> getVendor() {
+    public List<Vendor> getVendors() {
         return vendorRepository.findAll();
     }
 
@@ -30,6 +30,7 @@ public class VendorService implements IVendorService {
         return vendorRepository.save(vendor);
 
     }
+
 
     //Updating vendor by id
     @Override
