@@ -26,8 +26,6 @@ public class EmployeeService implements IEmployeeService {
     public Employee addEmployee(Employee employee) {
         if(employeeAlreadyExists(employee.getEmail())){
             throw new EmployeeAlreadyExistException(employee.getEmail() + " already exists!");
-
-
         }
         return employeeRepository.save(employee);
     }
@@ -35,12 +33,12 @@ public class EmployeeService implements IEmployeeService {
     //Updating user by id
     @Override
     public Employee updateEmployee(Employee employee, Long id) {
-        return employeeRepository.findById(id).map(st -> {
-            st.setFirstName(employee.getFirstName());
-            st.setLastName(employee.getLastName());
-            st.setEmail(employee.getEmail());
-            st.setDepartment(employee.getDepartment());
-            return employeeRepository.save(st);
+        return employeeRepository.findById(id).map(emp -> {
+            emp.setFirstName(employee.getFirstName());
+            emp.setLastName(employee.getLastName());
+            emp.setEmail(employee.getEmail());
+            emp.setDepartment(employee.getDepartment());
+            return employeeRepository.save(emp);
         }).orElseThrow(() -> new EmployeeNotFoundException("Sorry, employee could not be found."));//you need this coz its like if else statement
     }
 

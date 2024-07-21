@@ -49,7 +49,14 @@ const EmployeesView = () => {
           </thead>
 
           <tbody>
-            {employees.filter((st) => st.firstName.toLowerCase().includes(search))
+            {employees.filter((emp) => emp.firstName.toLowerCase().includes(search))
+
+            /* for everything
+            employees.filter((emp) =>
+              Object.values(emp).some((field) =>
+                typeof field === 'string' && field.toLowerCase().includes(search.toLowerCase())
+              )
+            )*/
 
             .map((employee, index) => (
               <tr className ="border py-2 px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 text-center text-blue-900 text-sm" key={employee.id}>

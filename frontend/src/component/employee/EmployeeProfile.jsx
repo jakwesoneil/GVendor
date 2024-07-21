@@ -26,7 +26,7 @@ const EmployeeProfile = () => {
                     <div className="px-6 py-4">
                         <div className="card-body text-center">
                             <img className="rounded-full mx-auto w-32"
-                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"/>
+                            src="https://i.pinimg.com/474x/a9/16/bc/a916bc5494815c4ed63714e6b6df57bf.jpg"/>
                             <h5 className="mt-4 text-xl font-semibold text-center">
                                 {`${employee.firstName} ${employee.lastName}`}
                             </h5>
