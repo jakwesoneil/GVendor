@@ -32,10 +32,10 @@ const EmployeesView = () => {
   }
   
   return (
-    <section className="max-w-screen-xl px-4 py-3 mx-auto mt-5">
-      <Search search = {search} setSearch={setSearch}/>
+    <section className="max-w-screen-xl px-4 py-3 mx-auto mt-1 ">
+      <Search search = {search} setSearch={setSearch} />
       
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto mt-4">
         <table className="min-w-full bg-white shadow-md rounded my-0">
           <thead>
             <tr className="bg-blue-500">
