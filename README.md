@@ -5,7 +5,7 @@
 ### Languages and Frameworks Used
 This was created using Vite with ReactJS along with Tailwind for the frontend and Springboot for the backend.
 
-###Prerequisites
+### Prerequisites
 Ensure you have the following installed on your machine:
 
   -Node.js
@@ -25,7 +25,7 @@ For VS Code to run the frontend
   npm run dev
 ```
 
-###Additional Libraries used 
+### Additional Libraries used 
 axios: for making http requests
 react-router-dom: for routing
 
