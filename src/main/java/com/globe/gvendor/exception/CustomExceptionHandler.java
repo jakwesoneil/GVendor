@@ -1,5 +1,6 @@
 package com.globe.gvendor.exception;
 
+import com.globe.gvendor.model.Vendor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -37,4 +38,23 @@ public class CustomExceptionHandler {
         error.put("error", ex.getMessage());
         return error;
     }
+
+
+
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(VendorNotFoundException.class)
+    public Map<String, String> userNotFound(VendorNotFoundException ex){
+        Map<String, String> error = new HashMap<>();
+        error.put("error", ex.getMessage());
+        return error;
+    }
+
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(VendorAlreadyExistException.class)
+    public Map<String, String> userNotFound(VendorAlreadyExistException ex){
+        Map<String, String> error = new HashMap<>();
+        error.put("error", ex.getMessage());
+        return error;
+    }
+
 }
