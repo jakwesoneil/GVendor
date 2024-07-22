@@ -19,8 +19,6 @@ public class Product {
     private String productLogo; //think of other way
     private String productType;
     @ManyToOne
-    private Vendor vendor;
-
-    @NaturalId(mutable = true) //will make email a unique key which could not be modified so it was set to true to make it editable
-    private String contactPersonEmail;
+    private Vendor vendorName;
+    private String yearAcquired;
 }

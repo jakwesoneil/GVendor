@@ -56,4 +56,22 @@ public class CustomExceptionHandler {
         return error;
     }
 
+
+
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(ProductNotFoundException.class)
+    public Map<String, String> userNotFound(ProductNotFoundException ex){
+        Map<String, String> error = new HashMap<>();
+        error.put("error", ex.getMessage());
+        return error;
+    }
+
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(ProductAlreadyExistException.class)
+    public Map<String, String> userNotFound(ProductAlreadyExistException ex){
+        Map<String, String> error = new HashMap<>();
+        error.put("error", ex.getMessage());
+        return error;
+    }
+
 }
