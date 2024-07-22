@@ -11,6 +11,8 @@ import EmployeeProfile from './component/employee/EmployeeProfile'
 import AddVendor from './component/vendor/AddVendor'
 import EditVendor from './component/vendor/EditVendor'
 import VendorsView from './component/vendor/VendorsView'
+import VendorProfile from './component/vendor/VendorProfile'
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -30,6 +32,9 @@ function App() {
             <Route exact path="/view-vendors" element={<VendorsView />}> </Route>
             <Route exact path="/add-vendors" element={<AddVendor />}> </Route>
             <Route exact path="/edit-vendor/:id" element={<EditVendor />}> </Route>
+            <Route exact path="/vendor-profile/:id" element={<VendorProfile />}> </Route>
+
+            
           </Routes>
         </Router>
       </div>

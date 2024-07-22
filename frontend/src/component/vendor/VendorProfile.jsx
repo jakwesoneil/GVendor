@@ -16,7 +16,7 @@ const VendorProfile = () => {
 		const result = await axios.get(
 			`http://localhost:9192/vendors/vendor/${id}`
 		);
-		setEmployee(result.data);
+		setVendor(result.data);
 	};
   return (
 
@@ -51,7 +51,7 @@ const VendorProfile = () => {
                                         <h5 className="font-semibold">Vendor Name</h5>
                                     </div>
                                     <div className="w-2/5">
-                                        <p className="text-muted mb-0">{employee.vendorName}</p>
+                                        <p className="text-muted mb-0">{vendor.vendorName}</p>
                                     </div>
                                 </div>
 
