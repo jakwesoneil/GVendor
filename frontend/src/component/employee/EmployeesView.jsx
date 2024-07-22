@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import '../../styles.css';
 import { Link } from 'react-router-dom';
-import Search from '../common/Search';
+import SearchEmployee from '../common/SearchEmployee';
 
 
 const EmployeesView = () => {
@@ -33,7 +33,7 @@ const EmployeesView = () => {
   
   return (
     <section className="max-w-screen-xl px-4 py-3 mx-auto mt-1 ">
-      <Search search = {search} setSearch={setSearch} />
+      <SearchEmployee search = {search} setSearch={setSearch} />
       
       <div className="overflow-x-auto mt-4">
         <table className="min-w-full bg-white shadow-md rounded my-0">

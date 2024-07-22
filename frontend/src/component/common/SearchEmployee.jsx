@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Search = ({search, setSearch}) => {
+const SearchEmployee = ({search, setSearch}) => {
   return (
     <div className= "">
         <form onSubmit={(e)=> e.preventDefault()}>
@@ -12,4 +12,4 @@ const Search = ({search, setSearch}) => {
   )
 }
 
-export default Search
+export default SearchEmployee
