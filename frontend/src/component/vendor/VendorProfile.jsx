@@ -3,18 +3,18 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-const EmployeeProfile = () => {
+const VendorProfile = () => {
 	const { id } = useParams();
 
-	const [employee, setEmployee] = useState({firstName: "",lastName: "",email: "",department: ""});
+	const [vendor, setVendor] = useState({vendorName: "", vendorLogo: "",country: "", yearFounded: "", productCount: 0, contactPersonEmail: ""});
 
 	useEffect(() => {
-		loadEmployee();
+		loadVendor();
 	}, []);
 
-	const loadEmployee = async () => {
+	const loadVendor = async () => {
 		const result = await axios.get(
-			`http://localhost:9192/employees/employee/${id}`
+			`http://localhost:9192/vendors/vendor/${id}`
 		);
 		setEmployee(result.data);
 	};
@@ -29,10 +29,10 @@ const EmployeeProfile = () => {
                             <img className="rounded-full mx-auto w-32"
                             src="https://i.pinimg.com/474x/a9/16/bc/a916bc5494815c4ed63714e6b6df57bf.jpg"/>
                             <h5 className="mt-4 text-xl font-semibold text-center">
-                                {`${employee.firstName} ${employee.lastName}`}
+                                {`${vendor.vendorName}`}
                             </h5>
                             <div className="flex justify-center mt-2">
-                            <Link to = {`/edit-employee/${employee.id}`} className="bg-blue-500 hover:bg-blue-900 text-center text-white text-sm font-bold py-2 px-4 rounded">
+                            <Link to = {`/edit-vendor/${vendor.id}`} className="bg-blue-500 hover:bg-blue-900 text-center text-white text-sm font-bold py-2 px-4 rounded">
                                 Edit
                             </Link>
                             </div>
@@ -48,39 +48,59 @@ const EmployeeProfile = () => {
                             <div className="mb-5 mt-5">
                                 <div className="flex items-center mb-2">
                                     <div className="w-3/5">
-                                        <h5 className="font-semibold">First Name</h5>
+                                        <h5 className="font-semibold">Vendor Name</h5>
                                     </div>
                                     <div className="w-2/5">
-                                        <p className="text-muted mb-0">{employee.firstName}</p>
+                                        <p className="text-muted mb-0">{employee.vendorName}</p>
                                     </div>
                                 </div>
 
                                 <div className="flex items-center mb-2">
                                     <div className="w-3/5">
-                                        <h5 className="font-semibold">Last Name</h5>
+                                        <h5 className="font-semibold">Vendor Logo</h5>
                                     </div>
                                     <div className="w-2/5">
-                                        <p className="text-muted mb-0">{employee.lastName}</p>
+                                        <p className="text-muted mb-0">{vendor.vendorLogo}</p>
                                     </div>
                                 </div>
 
                                 <div className="flex items-center mb-2">
                                     <div className="w-3/5">
-                                        <h5 className="font-semibold">Email</h5>
+                                        <h5 className="font-semibold">Country</h5>
                                     </div>
                                     <div className="w-2/5">
-                                        <p className="text-muted mb-0">{employee.email}</p>
+                                        <p className="text-muted mb-0">{vendor.country}</p>
                                     </div>
                                 </div>
 
                                 <div className="flex items-center mb-2">
                                     <div className="w-3/5">
-                                        <h5 className="font-semibold">Department</h5>
+                                        <h5 className="font-semibold">Year Founded</h5>
                                     </div>
                                     <div className="w-2/5">
-                                        <p className="text-muted mb-0">{employee.department}</p>
+                                        <p className="text-muted mb-0">{vendor.yearFounded}</p>
                                     </div>
                                 </div>
+                                
+                                <div className="flex items-center mb-2">
+                                    <div className="w-3/5">
+                                        <h5 className="font-semibold">Product Count</h5>
+                                    </div>
+                                    <div className="w-2/5">
+                                        <p className="text-muted mb-0">{vendor.productCount}</p>
+                                    </div>
+                                </div>
+
+
+                                <div className="flex items-center mb-2">
+                                    <div className="w-3/5">
+                                        <h5 className="font-semibold">Contact Person Email</h5>
+                                    </div>
+                                    <div className="w-2/5">
+                                        <p className="text-muted mb-0">{vendor.contactPersonEmail}</p>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -93,4 +113,4 @@ const EmployeeProfile = () => {
   
 
 
-export default EmployeeProfile
+export default VendorProfile

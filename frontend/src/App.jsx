@@ -7,6 +7,10 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import AddEmployee from './component/employee/AddEmployee'
 import EditEmployee from './component/employee/EditEmployee';
 import EmployeeProfile from './component/employee/EmployeeProfile'
+
+import AddVendor from './component/vendor/AddVendor'
+import EditVendor from './component/vendor/EditVendor'
+import VendorsView from './component/vendor/VendorsView'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -22,6 +26,10 @@ function App() {
             <Route exact path="/add-employees" element={<AddEmployee />}> </Route>
             <Route exact path="/edit-employee/:id" element={<EditEmployee />}> </Route>
             <Route exact path="/employee-profile/:id" element={<EmployeeProfile />}> </Route>
+            
+            <Route exact path="/view-vendors" element={<VendorsView />}> </Route>
+            <Route exact path="/add-vendors" element={<AddVendor />}> </Route>
+            <Route exact path="/edit-vendor/:id" element={<EditVendor />}> </Route>
           </Routes>
         </Router>
       </div>

@@ -38,7 +38,7 @@ public class VendorController {
         vendorService.deleteVendor(id);
     }
 
-    @GetMapping("/employee/{id}")
+    @GetMapping("/vendor/{id}")
     public Vendor getVendorById(@PathVariable Long id){
         return vendorService.getVendorById(id);
     }

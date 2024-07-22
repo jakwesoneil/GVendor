@@ -21,7 +21,7 @@ public class Vendor {
     private String vendorName;
     private String vendorLogo; //think of other way
     private String country;
-    private int yearFounded;
+    private String yearFounded;
     private int productCount;
 
     @NaturalId(mutable = true) //will make email a unique key which could not be modified so it was set to true to make it editable

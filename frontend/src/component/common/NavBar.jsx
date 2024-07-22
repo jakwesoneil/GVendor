@@ -61,13 +61,19 @@ const NavBar = () => {
                 <div className="flex items-center">
                     <ul className="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
                         <li>
-                            <Link className="text-white  hover:underline"  aria-current="page" to={"/"} >Home</Link>
+                            <Link className="text-white hover:underline" aria-current="page" to={"/"} >Home</Link>
                         </li>
                         <li>
-                            <Link className="text-white  hover:underline"  aria-current="page" to={"/view-employees"} >View All Employees</Link>
+                            <Link className="text-white hover:underline" aria-current="page" to={"/view-employees"} >View All Employees</Link>
                         </li>
                         <li>
-                            <Link className="text-white  hover:underline" to={"/add-employees"} >Add an Employee</Link>
+                            <Link className="text-white hover:underline" aria-current="page" to={"/add-employees"} >Add an Employee</Link>
+                        </li>
+                        <li>
+                            <Link className="text-white hover:underline" aria-current="page" to={"/view-vendors"} >View Vendors</Link>
+                        </li>
+                        <li>
+                            <Link className="text-white hover:underline" aria-current="page" to={"/add-vendors"} >Add Vendors</Link>
                         </li>
                     </ul>
                 </div>
