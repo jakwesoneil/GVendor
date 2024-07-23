@@ -75,6 +75,9 @@ const NavBar = () => {
                         <li>
                             <Link className="text-white hover:underline" aria-current="page" to={"/add-vendors"} >Add a Vendor</Link>
                         </li>
+                        <li>
+                            <Link className="text-white hover:underline" aria-current="page" to={"/add-products"} >Add a Product</Link>
+                        </li>
                     </ul>
                 </div>
             </div>

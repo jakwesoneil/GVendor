@@ -12,6 +12,7 @@ import AddVendor from './component/vendor/AddVendor'
 import EditVendor from './component/vendor/EditVendor'
 import VendorsView from './component/vendor/VendorsView'
 import VendorProfile from './component/vendor/VendorProfile'
+import AddProduct from './component/Product/AddProduct'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -34,7 +35,7 @@ function App() {
             <Route exact path="/edit-vendor/:id" element={<EditVendor />}> </Route>
             <Route exact path="/vendor-profile/:id" element={<VendorProfile />}> </Route>
 
-            
+            <Route exact path="/add-products" element={<AddProduct />}> </Route>
           </Routes>
         </Router>
       </div>
