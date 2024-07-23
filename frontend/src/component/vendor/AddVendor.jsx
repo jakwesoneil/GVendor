@@ -6,13 +6,12 @@ const AddVendor = () => {
 
     let navigate = useNavigate();
 
-    const [vendor, setVendor] = useState({vendorName: "", vendorLogo: "",country: "", yearFounded: "", contactPersonEmail: ""});
+    const [vendor, setVendor] = useState({vendorName: "", vendorLogo: "",country: "", yearFounded: "", productCount:0, contactPersonEmail: ""});
     const{vendorName, vendorLogo, country, yearFounded, productCount, contactPersonEmail} = vendor;
 
     const handleInputChange = (e) => {
         setVendor({...vendor, [e.target.name]: e.target.value});
     };
-
 
     const saveVendor = async (e) => {
         e.preventDefault();

@@ -1,21 +1,32 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 
 const EditVendor = () => {
 
     let navigate = useNavigate();
 
+    const {id} = useParams();
+
     const [vendor, setVendor] = useState({vendorName: "", vendorLogo: "",country: "", yearFounded: "", contactPersonEmail: ""});
     const{vendorName, vendorLogo, country, yearFounded, productCount, contactPersonEmail} = vendor;
 
-    const handleInputChange = (e) => {
+    useEffect(() => {
+        loadVendor();
+    }, []);
+      
+      const loadVendor = async () => {
+        const result = await axios.get(`http://localhost:9192/vendors/vendor/${id}`);
+        setVendor(result.data); //or response?
+      }
+
+      const handleInputChange = (e) => {
         setVendor({...vendor, [e.target.name]: e.target.value});
     };
 
-    const saveVendor = async (e) => {
+    const updateVendor = async (e) => {
         e.preventDefault();
-        await axios.post("http://localhost:9192/vendors", vendor);
+        await axios.put(`http://localhost:9192/vendors/update/${id}`, vendor);
         navigate("/view-vendors");
     };
 
@@ -24,7 +35,7 @@ const EditVendor = () => {
     <div className= "bg-blue-900 py-8 px-4 sm:px-6 lg:px-8">
         <div className="max-w-md mx-auto">
         <h2 className="mt-5 text-center text-white mb-5">Edit Vendor</h2>
-            <form className= "space-y-6" onSubmit = {(e)=> saveVendor(e)}>
+            <form className= "space-y-6" onSubmit = {(e)=> updateVendor(e)}>
                 <div className="mb-5">
                     <label className="block text-sm font-medium text-white" htmlFor='firstName'>Vendor Name</label>
                 </div>
