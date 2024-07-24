@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'; 
 import Home from '../../Home';
-
+import { BiSolidHome, BiSolidUser, BiSolidUserPlus, BiSolidCart, BiSolidCartAdd, BiLogoProductHunt} from "react-icons/bi";
+import { IoIosAddCircle } from "react-icons/io";
 const NavBar = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -61,25 +62,25 @@ const NavBar = () => {
                 <div className="flex items-center">
                     <ul className="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
                         <li>
-                            <Link className="text-white hover:underline" aria-current="page" to={"/"} >Home</Link>
+                            <Link className="text-white hover:underline" aria-current="page" to={"/"} > <BiSolidHome className="w-5 h-8 text-blue-100"/> </Link>
                         </li>
                         <li>
-                            <Link className="text-white hover:underline" aria-current="page" to={"/view-employees"} >View All Employees</Link>
+                            <Link className="text-white hover:underline" aria-current="page" to={"/view-employees"} > <BiSolidUser className="w-5 h-8 text-blue-100"/> </Link>
                         </li>
                         <li>
-                            <Link className="text-white hover:underline" aria-current="page" to={"/add-employees"} >Add an Employee</Link>
+                            <Link className="text-white hover:underline" aria-current="page" to={"/add-employees"} ><BiSolidUserPlus className="w-7 h-8 text-blue-100"/> </Link>
                         </li>
                         <li>
-                            <Link className="text-white hover:underline" aria-current="page" to={"/view-vendors"} >View Vendors</Link>
+                            <Link className="text-white hover:underline" aria-current="page" to={"/view-vendors"} ><BiSolidCart className="w-5 h-8 text-blue-100"/> </Link>
                         </li>
                         <li>
-                            <Link className="text-white hover:underline" aria-current="page" to={"/add-vendors"} >Add a Vendor</Link>
+                            <Link className="text-white hover:underline" aria-current="page" to={"/add-vendors"} > <BiSolidCartAdd className="w-5 h-8 text-blue-100"/> </Link>
                         </li>
                         <li>
-                            <Link className="text-white hover:underline" aria-current="page" to={"/view-products"} >View Products</Link>
+                            <Link className="text-white hover:underline" aria-current="page" to={"/view-products"} > <BiLogoProductHunt className="w-5 h-8 text-blue-100"/> </Link>
                         </li>
                         <li>
-                            <Link className="text-white hover:underline" aria-current="page" to={"/add-products"} >Add a Product</Link>
+                            <Link className="text-white hover:underline" aria-current="page" to={"/add-products"} ><IoIosAddCircle className="w-5 h-8 text-blue-100"/> </Link>
                         </li>
                     </ul>
                 </div>
