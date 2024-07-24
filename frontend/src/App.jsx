@@ -1,5 +1,9 @@
 import { useState } from 'react'
 import './App.css'
+
+import Login from './component/pages/Login'
+import Signup from './component/pages/Signup'
+
 import Home from './Home'
 import EmployeesView from './component/employee/EmployeesView'
 import NavBar from './component/common/NavBar'
@@ -27,6 +31,8 @@ function App() {
         <Router>
           <NavBar/>
           <Routes>
+            <Route exact path="/login" element={<Login />}> </Route>
+            <Route exact path="/signup" element={<Signup />}> </Route>
             <Route exact path="/" element={<Home />}> </Route>
             <Route exact path="/view-employees" element={<EmployeesView />}> </Route>
             <Route exact path="/add-employees" element={<AddEmployee />}> </Route>
