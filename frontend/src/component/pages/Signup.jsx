@@ -10,7 +10,10 @@ const Signup = () => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-cover bg-center"
              style={{ backgroundImage: `url(${backgroundImage})` }}>
-            <div className="bg-blue-900 border border-zinc-100 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-30 relative">
+            <div className="bg-blue-300 border border-zinc-100 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-sm bg-opacity-30 relative">
+            <div className="flex justify-center items-center mb-6">
+                    <img className="h-10" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Globe_Telecom_logo.svg/1200px-Globe_Telecom_logo.svg.png" alt="Globe Logo" />
+                </div>
                 <h1 className="text-4xl text-white font-bold text-center mb-6">Register</h1>
                 <form action="">
                     <div className="relative my-4">
