@@ -36,13 +36,13 @@ const NavBar = () => {
                             </div>
                             <ul className="py-2" aria-labelledby="user-menu-button">
                                 <li>
-                                <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 dark:hover:bg-blue-600 dark:text-gray-200 dark:hover:text-white">Home</a>
+                                <Link className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 dark:hover:bg-blue-600 dark:text-gray-200 dark:hover:text-white" aria-current="page" to={"/"} >Home</Link>
                                 </li>
                                 <li>
-                                <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 dark:hover:bg-blue-600 dark:text-gray-200 dark:hover:text-white">View Employees</a>
+                                <Link className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 dark:hover:bg-blue-600 dark:text-gray-200 dark:hover:text-white" aria-current="page" to={"/view-employees"} >View Employees</Link>
                                 </li>
                                 <li>
-                                <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 dark:hover:bg-blue-600 dark:text-gray-200 dark:hover:text-white">Add Employee</a>
+                                <Link className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 dark:hover:bg-blue-600 dark:text-gray-200 dark:hover:text-white" aria-current="page" to={"/add-employees"}>Add Employee </Link>
                                 </li>
                                 <li>
                                 <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 dark:hover:bg-blue-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
