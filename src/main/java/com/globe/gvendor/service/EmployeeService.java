@@ -36,8 +36,10 @@ public class EmployeeService implements IEmployeeService {
         return employeeRepository.findById(id).map(emp -> {
             emp.setFirstName(employee.getFirstName());
             emp.setLastName(employee.getLastName());
-            emp.setEmail(employee.getEmail());
             emp.setDepartment(employee.getDepartment());
+            emp.setEmail(employee.getEmail());
+            emp.setPassword(employee.getPassword());
+            emp.setConfirmPassword(employee.getConfirmPassword());
             return employeeRepository.save(emp);
         }).orElseThrow(() -> new EmployeeNotFoundException("Sorry, employee could not be found."));//you need this coz its like if else statement
     }

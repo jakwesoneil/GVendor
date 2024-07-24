@@ -25,4 +25,6 @@ public class Employee {
     @NaturalId(mutable = true) //will make email a unique key which could not be modified so it was set to true to make it editable
     private String email;
     private String department;
+    private String password;
+    private String confirmPassword;
 }
