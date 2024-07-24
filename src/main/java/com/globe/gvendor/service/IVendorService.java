@@ -1,6 +1,5 @@
 package com.globe.gvendor.service;
 
-import com.globe.gvendor.model.Employee;
 import com.globe.gvendor.model.Vendor;
 
 import java.util.List;
