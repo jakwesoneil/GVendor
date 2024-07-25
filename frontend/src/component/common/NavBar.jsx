@@ -45,6 +45,9 @@ const NavBar = () => {
                                 <Link className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 dark:hover:bg-blue-600 dark:text-gray-200 dark:hover:text-white" aria-current="page" to={"/add-employees"}>Add Employee </Link>
                                 </li>
                                 <li>
+                                <Link className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 dark:hover:bg-blue-600 dark:text-gray-200 dark:hover:text-white" aria-current="page" to={"/login"}>Login </Link>
+                                </li>
+                                <li>
                                 <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-100 dark:hover:bg-blue-600 dark:text-gray-200 dark:hover:text-white">Sign out</a>
                                 </li>
                             </ul>
