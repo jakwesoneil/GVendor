@@ -38,15 +38,15 @@ const AddEmployee = () => {
                 </input>
 
                 <div className="mb-5">
-                    <label className="block text-sm font-medium text-white" htmlFor='email'>Email</label>
-                </div>
-                <input className="mt-1 block w-full px-3 py-2 border border-gray-300 shadow-sm rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" type ="text" name ="email" id ="email" required value={email} onChange={(e) => handleInputChange(e)}>
-                </input>
-
-                <div className="mb-5">
                     <label className="block text-sm font-medium text-white" htmlFor='department'>Department</label>
                 </div>
                 <input className="mt-1 block w-full px-3 py-2 border border-gray-300 shadow-sm rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" type ="text" name ="department" id ="department" required value={department} onChange={(e) => handleInputChange(e)}>
+                </input>
+
+                <div className="mb-5">
+                    <label className="block text-sm font-medium text-white" htmlFor='email'>Email</label>
+                </div>
+                <input className="mt-1 block w-full px-3 py-2 border border-gray-300 shadow-sm rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm" type ="text" name ="email" id ="email" required value={email} onChange={(e) => handleInputChange(e)}>
                 </input>
 
                 <div className="mb-5">
