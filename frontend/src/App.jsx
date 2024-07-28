@@ -7,11 +7,12 @@ import Signup from './component/pages/Signup'
 
 import NavBar from './component/common/NavBar'
 import Home from './Home'
-import EmployeesView from './component/employee/EmployeesView'
+import EmployeeDashboard from './component/Dashboard/EmployeeDashboard'
 
 
 import AddEmployee from './component/employee/AddEmployee'
 import EditEmployee from './component/employee/EditEmployee';
+import EmployeesView from './component/employee/EmployeesView'
 import EmployeeProfile from './component/employee/EmployeeProfile'
 
 import AddVendor from './component/vendor/AddVendor'
@@ -37,6 +38,7 @@ function App() {
             <Route exact path="/login" element={<Login />}> </Route>
             <Route exact path="/signup" element={<Signup />}> </Route>
             <Route exact path="/" element={<Home />}> </Route>
+            <Route exact path="/count" element={<EmployeeDashboard />}> </Route>
             <Route exact path="/view-employees" element={<EmployeesView />}> </Route>
             <Route exact path="/add-employees" element={<AddEmployee />}> </Route>
             <Route exact path="/edit-employee/:id" element={<EditEmployee />}> </Route>

@@ -59,8 +59,15 @@ public class EmployeeService implements IEmployeeService {
         }
         employeeRepository.deleteById(id);
     }
+
     //Getting user by email
     private boolean employeeAlreadyExists(String email) {
         return employeeRepository.findByEmail(email).isPresent();
+    }
+
+    //count all employees
+    @Override
+    public long countEmployees() {
+        return employeeRepository.count();
     }
 }

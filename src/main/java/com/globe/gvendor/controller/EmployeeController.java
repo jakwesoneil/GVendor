@@ -43,4 +43,8 @@ public class EmployeeController {
         return employeeService.getEmployeeById(id);
     }
 
+    @GetMapping("/count")
+    public ResponseEntity<Long> countEmployees() {
+        return new ResponseEntity<>(employeeService.countEmployees(), HttpStatus.OK);
+    }
 }
