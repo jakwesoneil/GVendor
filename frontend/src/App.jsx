@@ -1,13 +1,15 @@
 import { useState } from 'react'
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import './App.css'
 
 import Login from './component/pages/Login'
 import Signup from './component/pages/Signup'
 
+import NavBar from './component/common/NavBar'
 import Home from './Home'
 import EmployeesView from './component/employee/EmployeesView'
-import NavBar from './component/common/NavBar'
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+
+
 import AddEmployee from './component/employee/AddEmployee'
 import EditEmployee from './component/employee/EditEmployee';
 import EmployeeProfile from './component/employee/EmployeeProfile'
@@ -17,9 +19,10 @@ import EditVendor from './component/vendor/EditVendor'
 import VendorsView from './component/vendor/VendorsView'
 import VendorProfile from './component/vendor/VendorProfile'
 
-import ProductsView from './component/Product/ProductsView'
 import AddProduct from './component/Product/AddProduct'
 import EditProduct from './component/Product/EditProduct'
+import ProductsView from './component/Product/ProductsView'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -47,6 +50,7 @@ function App() {
             <Route exact path="/view-products" element={<ProductsView />}> </Route>
             <Route exact path="/add-products" element={<AddProduct />}> </Route>
             <Route exact path="/edit-product/:id" element={<EditProduct />}> </Route>
+
           </Routes>
         </Router>
       </div>
