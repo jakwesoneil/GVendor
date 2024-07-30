@@ -1,7 +1,6 @@
 package com.globe.gvendor.service;
 
 import com.globe.gvendor.model.Employee;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 import java.util.List;
 
