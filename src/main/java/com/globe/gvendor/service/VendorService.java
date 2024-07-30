@@ -65,4 +65,8 @@ public class VendorService implements IVendorService {
     private boolean vendorAlreadyExists(String vendorName) {
         return vendorRepository.findByVendorName(vendorName).isPresent();
     }
+
+    public long countVendors() {
+        return vendorRepository.count();
+    }
 }

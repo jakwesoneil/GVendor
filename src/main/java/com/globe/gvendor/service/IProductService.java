@@ -11,4 +11,5 @@ public interface IProductService {
     Product getProductById(Long id);
     void deleteProduct(Long id);
 
+    long countProducts();
 }

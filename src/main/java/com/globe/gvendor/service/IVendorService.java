@@ -12,4 +12,5 @@ public interface IVendorService {
 
     void deleteVendor(Long id);
 
+    long countVendors();
 }

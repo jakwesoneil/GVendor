@@ -43,4 +43,8 @@ public class ProductController {
         return productService.getProductById(id);
     }
 
+    @GetMapping("/count")
+    public ResponseEntity<Long> getProductCount() {
+        return new ResponseEntity<>(productService.countProducts(), HttpStatus.OK);
+    }
 }

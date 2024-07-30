@@ -72,4 +72,8 @@ public class ProductService implements IProductService {
     private boolean productAlreadyExists(String productName) {
         return productRepository.findByProductName(productName).isPresent();
     }
+
+    public long countProducts() {
+        return productRepository.count();
+    }
 }

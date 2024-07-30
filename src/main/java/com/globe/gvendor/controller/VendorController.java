@@ -43,4 +43,8 @@ public class VendorController {
         return vendorService.getVendorById(id);
     }
 
+    @GetMapping("/count")
+    public ResponseEntity<Long> getVendorCount() {
+        return new ResponseEntity<>(vendorService.countVendors(), HttpStatus.OK);
+    }
 }

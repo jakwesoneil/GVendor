@@ -8,6 +8,8 @@ import Signup from './component/pages/Signup'
 import NavBar from './component/common/NavBar'
 import Home from './Home'
 import EmployeeDashboard from './component/Dashboard/EmployeeDashboard'
+import VendorDashboard from './component/Dashboard/VendorDashboard'
+import ProductDashboard from './component/Dashboard/ProductDashboard'
 
 
 import AddEmployee from './component/employee/AddEmployee'
@@ -38,17 +40,20 @@ function App() {
             <Route exact path="/login" element={<Login />}> </Route>
             <Route exact path="/signup" element={<Signup />}> </Route>
             <Route exact path="/" element={<Home />}> </Route>
+
             <Route exact path="/count" element={<EmployeeDashboard />}> </Route>
             <Route exact path="/view-employees" element={<EmployeesView />}> </Route>
             <Route exact path="/add-employees" element={<AddEmployee />}> </Route>
             <Route exact path="/edit-employee/:id" element={<EditEmployee />}> </Route>
             <Route exact path="/employee-profile/:id" element={<EmployeeProfile />}> </Route>
             
+            <Route exact path="/count" element={<VendorDashboard />}> </Route>
             <Route exact path="/view-vendors" element={<VendorsView />}> </Route>
             <Route exact path="/add-vendors" element={<AddVendor />}> </Route>
             <Route exact path="/edit-vendor/:id" element={<EditVendor />}> </Route>
             <Route exact path="/vendor-profile/:id" element={<VendorProfile />}> </Route>
 
+            <Route exact path="/count" element={<ProductDashboard />}> </Route>
             <Route exact path="/view-products" element={<ProductsView />}> </Route>
             <Route exact path="/add-products" element={<AddProduct />}> </Route>
             <Route exact path="/edit-product/:id" element={<EditProduct />}> </Route>
