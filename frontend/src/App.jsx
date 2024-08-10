@@ -22,9 +22,10 @@ import EditVendor from './component/vendor/EditVendor'
 import VendorsView from './component/vendor/VendorsView'
 import VendorProfile from './component/vendor/VendorProfile'
 
-import AddProduct from './component/Product/AddProduct'
-import EditProduct from './component/Product/EditProduct'
-import ProductsView from './component/Product/ProductsView'
+import AddProduct from './component/product/AddProduct'
+import EditProduct from './component/product/EditProduct'
+import ProductsView from './component/product/ProductsView'
+import ProductProfile from './component/product/ProductProfile'
 
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
             <Route exact path="/view-products" element={<ProductsView />}> </Route>
             <Route exact path="/add-products" element={<AddProduct />}> </Route>
             <Route exact path="/edit-product/:id" element={<EditProduct />}> </Route>
+            <Route exact path="/product-profile/:id" element={<ProductProfile />}> </Route>
 
           </Routes>
         </Router>
